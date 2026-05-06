@@ -1233,12 +1233,9 @@ const _SECTION_TITLES = {
 };
 
 function showSection(id) {
-  const secEmp     = document.getElementById('section-empresas') || {style:{}};
   const sidebar    = document.getElementById('sidebar');
   const topbar     = document.getElementById('topbar');
 
-  // Ocultar portada, mostrar sidebar y topbar
-  secEmp.style.display  = 'none';
   sidebar.style.display = '';
   topbar.style.display  = '';
 
@@ -3015,7 +3012,10 @@ function renderEmpresas() {
       <div style="font-size:10px;color:#55556A;line-height:1.5">${emp.ein||emp.sub||''}</div>
       ${dots}${nota}
     </div>`;
-  }).join('');
+  }).join('') + `<div style="background:var(--surface);border:2px dashed var(--border);border-radius:22px;padding:28px 24px;text-align:center;min-width:200px;max-width:240px;width:220px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px" onclick="abrirModalNuevaEmpresa()" onmouseover="this.style.borderColor='var(--red)'" onmouseout="this.style.borderColor='var(--border)'">
+    <div style="font-size:32px">➕</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--text2)">Nueva Empresa</div>
+  </div>`;
 }
 
 
